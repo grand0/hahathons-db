@@ -7,7 +7,7 @@ create table hackathons
   start_time timestamp,
   end_time timestamp,
   initiator_id bigint,
-  is_online varchar,
+  is_online int,
   description varchar,
   registration_deadline timestamp,
   platform_id bigint
