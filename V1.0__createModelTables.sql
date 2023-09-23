@@ -4,18 +4,21 @@ create table platforms
   url varchar,
   image_url varchar
 );
+
 create table points_distribution
 ( distribution_id bigint,
   guide_id bigint,
   criterion varchar,
   score int
 );
+
 create table points_distribution_guide
 ( guide_id bigint,
   hackathon_id bigint,
   criterion_name varchar,
   max_points int
 );
+
 create table results
 ( result_id bigint,
   hackathon_id bigint,
