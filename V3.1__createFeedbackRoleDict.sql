@@ -1,4 +1,3 @@
--- Создаем таблицу FeedbackRoles
 CREATE TABLE FeedbackRoles (
     role_id bigint,
     name VARCHAR(255) NOT NULL,
@@ -7,10 +6,11 @@ CREATE TABLE FeedbackRoles (
     qualification_requirements TEXT
 );
 
+alter table FeedbackRoles add primary key(role_id);
+
 create sequence role_seq;
 alter table FeedbackRoles alter column role_id set default nextval('role_seq');
 
--- Вставляем более конкретные роли с подробными описаниями
 INSERT INTO FeedbackRoles (name, description, responsibilities, qualification_requirements)
 VALUES 
     ('Participant', 'Role for participants in the hackathon who actively engage in project development and presentations.',
@@ -23,7 +23,7 @@ VALUES
     
     ('Mentor', 'Role for mentors who provide guidance and support to hackathon participants.',
      '1. Offer guidance and advice to participants. 2. Help teams overcome challenges. 3. Share knowledge and experience.',
-     '1. Extensive experience in relevant field. 2. Strong mentoring and coaching skills.\n3. Availability for participant support.'),
+     '1. Extensive experience in relevant field. 2. Strong mentoring and coaching skills. 3. Availability for participant support.'),
     
     ('Organizer', 'Role for organizers responsible for planning and coordinating the hackathon event.',
      '1. Plan and schedule hackathon activities. 2. Secure resources and facilities. 3. Ensure smooth event execution.',
