@@ -1,9 +1,14 @@
 CREATE TABLE ResultStatus (
-    id serial PRIMARY KEY,
+    status_id bigint,
     name VARCHAR(255) NOT NULL,
     description TEXT,
-    prize_type VARCHAR(255) 
+    prize_type VARCHAR(255)
 );
+
+alter table ResultStatus add primary key(status_id);
+
+create sequence status_seq;
+alter table ResultStatus alter column status_id set default nextval('status_seq');
 
 INSERT INTO ResultStatus (name, description, prize_type)
 VALUES 
