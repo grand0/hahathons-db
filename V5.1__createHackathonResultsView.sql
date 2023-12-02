@@ -8,4 +8,5 @@ select h.hackathon_id,
        r.reward
 from hackathons h inner join teams t on h.hackathon_id = t.hackathon_id 
                           inner join results r on t.team_id = r.team_id 
-              inner join resultstatus r2 on r.status_id  = r2.status_id; 
+              inner join resultstatus r2 on r.status_id  = r2.status_id
+                            order by h.start_time desc, r.status_id asc; 
